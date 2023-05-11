@@ -10,7 +10,7 @@ const Users = new Schema({
     type: String,
     profileUrl: String,
     money: Number,
-    exp: Number,
+    exp: Object,
     status: String,
     banned: Object,
     data: Object,

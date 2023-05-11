@@ -5,8 +5,9 @@ mongoose.set('strictQuery', true);
 
 import threadsModel from "../models/threadsModel.js"
 import usersModel from "../models/usersModel.js"
+import interactModel from "../models/interactModel.js";
 
-export default async function({ logger }) {
+export default async function ({ logger }) {
     const { config } = global.client;
     const databaseType = config.DATABASE.type;
     if (databaseType == "mongodb" && config.DATABASE.uriMongodb) {
@@ -20,9 +21,9 @@ export default async function({ logger }) {
 
         const uriConnect = config.DATABASE.uriMongodb;
         await mongoose.connect(uriConnect, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            })
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
             .then(result => {
                 logger.log("\x1b[1;33m" + global.getText('CONNECTION_DATABASE_SUCCESS') + '\n', "MONGODB");
                 clearInterval(loadmongo);
@@ -42,5 +43,10 @@ export default async function({ logger }) {
             type: "user",
             data: Object
         });
+
+        if ((await interactModel.find({ type: "interact" })).length == 0) await interactModel.create({
+            type: 'interact',
+            data: Object
+        })
     }
 }

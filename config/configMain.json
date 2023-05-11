@@ -1,16 +1,17 @@
 {
-    "NAME": "𝐒𝐤𝐲𝐁𝐨𝐭 ✌️",
-    "PREFIX": "!",
+    "NAME": "Trợ lý ảo Eris",
+    "PREFIX": ">",
     "ADMIN": [
-        "IDADMIN"
+        "100062620706908",
+        "100068444877114"
     ],
     "EXCEPTION": [
         "IDEXCEPTION"
     ],
     "LANGUAGE_SYS": "vi_VN",
     "DATABASE": {
-        "type": "local",
-        "uriMongodb": "mongodb+srv:<username>: <password> @<cluster-url> /<database>?retryWrites=true&w=majority",
+        "type": "mongodb",
+        "uriMongodb": "mongodb+srv://UmiOwner:Eris1997@umi.ejlfefc.mongodb.net/TroLyEris?retryWrites=true&w=majority",
         "notes": "Choose *local* or *mongodb*"
     },
     "AUTOUNSEND": {
@@ -27,7 +28,7 @@
     },
     "UPTIMEROBOT": false,
     "personalOnly": false,
-    "boxOnly": null,
+    "boxOnly": "6331158446947468",
     "allQTVOnly": false,
     "adminOnly": false,
     "LOGBOT": false,
